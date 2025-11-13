@@ -1,0 +1,16 @@
+STT,name,price,description,image
+1,MacBook Pro M3 14-inch,45990000,"Chip Apple M3, màn hình Liquid Retina XDR, pin 18 giờ.",macbook-pro-m3-14-inch.jpg
+2,MacBook Air M2 13-inch,28990000,"Chip M2, thiết kế mỏng nhẹ, pin 18 giờ, hiệu năng cao.",macbook-air-m2-13-inch.jpg
+3,Dell XPS 13 Plus,35990000,"Intel Core Ultra 7, màn hình OLED 3.5K, khung nhôm sang trọng.",dell-xps-13-plus.jpg
+4,ASUS Zenbook 14 OLED,24990000,"Màn hình OLED 2.8K, chip Intel Core i7 Gen 13, pin 75Wh.",asus-zenbook-14-oled.jpg
+5,HP Spectre x360 14,31990000,"Màn hình cảm ứng OLED, xoay gập 360 độ, chip Intel Core i7.",hp-spectre-x360-14.jpg
+6,Lenovo Yoga 9i Gen 8,32990000,"Màn hình OLED 2.8K, âm thanh Dolby Atmos, thiết kế xoay gập.",lenovo-yoga-9i-gen-8.jpg
+7,Acer Swift X 16,27990000,"GPU RTX 4050, chip Ryzen 9, màn hình OLED 120Hz.",acer-swift-x-16.jpg
+8,MSI Stealth 14 Studio,39990000,"Laptop gaming mỏng nhẹ, GPU RTX 4070, màn hình QHD+ 240Hz.",msi-stealth-14-studio.jpg
+9,Gigabyte AERO 16 OLED,42990000,"Màn hình 4K OLED, dành cho sáng tạo nội dung, chip i9 Gen 13.",gigabyte-aero-16-oled.jpg
+10,Razer Blade 15,52990000,"Laptop gaming cao cấp, GPU RTX 4080, khung nhôm CNC.",razer-blade-15.jpg
+11,Sony WH-1000XM5,9990000,"Tai nghe chống ồn hàng đầu, âm thanh Hi-Res, pin 30 giờ.",sony-wh-1000xm5.jpg
+12,Apple AirPods Pro 2,6490000,"Chống ồn chủ động, chip H2, Spatial Audio, sạc MagSafe.",apple-airpods-pro-2.jpg
+13,Bose QuietComfort Ultra,9990000,"Tai nghe chống ồn cao cấp, âm thanh 3D, pin 24 giờ.",bose-quietcomfort-ultra.jpg
+14,Sennheiser Momentum 4 Wireless,8990000,"Chống ồn chủ động, pin 60 giờ, chất âm audiophile.",sennheiser-momentum-4-wireless.jpg
+15,Logitech G Pro X 2 Lightspeed,5990000,"Tai nghe gaming không dây, âm thanh DTS:X 2.0, pin 50 giờ.",logitech-g-pro-x-2-lightspeed.jpg

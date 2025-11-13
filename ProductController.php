@@ -1,57 +1,50 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Product;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Models\Product; 
 
 class ProductController extends Controller
 {
-    /**
-     * Hiển thị danh sách sản phẩm
-     */
-    public function index()
+    public function show($id)
     {
-        $products = Product::all(); 
-        return view('admin.products.index', compact('products'));
+        $product = Product::findOrFail($id);
+        return view('product-detail', compact('product'));
     }
 
-    public function create()
+    public function byCategory($slug)
     {
-        // Chỉ cần trả về view có chứa form
-        return view('admin.products.create');
-    }
+        $categoryName = match ($slug) {
+            'dien-thoai' => 'Điện thoại',
+            'laptop-phu-kien', 'laptop', 'phu-kien' => 'Laptop / Phụ kiện',
+            default => null,
+        };
 
-    /**
-     * (HÀM MỚI)
-     * Lưu sản phẩm mới vào database
-     */
-    public function store(Request $request)
-    {
-        // 1. Validation (Kiểm tra dữ liệu)
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'price' => 'required|numeric|min:0',
-            'quantity' => 'required|integer|min:0',
-            'description' => 'nullable|string',
-            'category' => 'required|string|in:Điện thoại,Laptop,Phụ kiện',
-    
+        if (!$categoryName) {
+            abort(404);
+        }
+
+        $products = Product::where('category', $categoryName)->get();
+
+        return view('category', [
+            'products' => $products,
+            'category' => $categoryName
         ]);
-
-        // 2. Tạo sản phẩm mới từ dữ liệu
-        // (Sử dụng $fillable trong Model)
-        Product::create([
-            'name' => $request->name,
-            'price' => $request->price,
-            'quantity' => $request->quantity,
-            'description' => $request->description,
-            'category' => $request->category,
-        ]);
-
-        // 3. Quay trở lại trang danh sách với thông báo thành công
-        return redirect()->route('admin.products.index')
-                         ->with('success', 'Thêm sản phẩm thành công!');
     }
-   
+
+    public function search(Request $request)
+    {
+        $query = $request->input('q');
+
+        $products = Product::where('name', 'like', "%{$query}%")
+            ->orWhere('description', 'like', "%{$query}%")
+            ->get();
+
+        return view('search-results', [
+            'query' => $query,
+            'products' => $products,
+        ]);
+    }
 }
